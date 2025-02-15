@@ -1,0 +1,26 @@
+1. Introduction to Single-Port RAM
+A single-port RAM (Random Access Memory) is a type of digital memory component that allows data to be read from and written to a single memory location (address) at a time. It is a simple form of memory that provides a basic storage mechanism for digital systems. Each memory location in a single-port RAM can store a fixed number of bits (usually a power of 2, such as 8, 16, 32, etc.).
+During a read operation, the data stored at a specific address is retrieved. During a write operation, new data is stored at a specific address, replacing the previous data.
+
+why it is called single-port RAM
+   A single-port RAM has only one data port, which means that read and write operations cannot occur simultaneously at different addresses. If a write operation is in progress, a read operation must wait, and vice versa.
+
+2. Architecture of Single-Port RAM
+The fundamental components of a Single-Port RAM design include:
+Clock Signal (clk): Synchronizes memory operations.
+Write Enable (we): Determines whether data is written (1) or read (0).
+Address Bus (addr): Specifies the memory location for read/write operations.
+Data Input (din): Data to be written into the memory.
+Data Output (dout): Data read from memory.
+Memory Array (mem): A register-based storage for data.
+
+3.Memory Operations
+Write Operation (we = 1): The input data (din) is written into the memory at address addr on the rising edge of clk.
+Read Operation (we = 0): The data stored in memory at address addr is assigned to dout on the rising edge of clk.
+
+4.Key Features
+✅ Synchronous Read and Write: Operations occur only on the clock edge.
+✅ Single-Port: Read or Write, but not both at the same time.
+✅ Scalable: Easily configurable for different memory sizes using DATA_WIDTH and ADDR_WIDTH.
+✅ Efficient for FPGA/ASIC: Suitable for block RAM (BRAM) implementations.
+
